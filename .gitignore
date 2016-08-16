@@ -1,0 +1,24 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+*.class
+*.jar
+*.war
+*.ear
+*.BAK
+*.log
+.DS_Store
+target
+
+*.ipr
+*.iws
+*.iml
+.idea/
+PrintServer.db
+
+# eclipse
+*project
+*settings
+*classpath
+*externalToolBuilders
