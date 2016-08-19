@@ -30,12 +30,12 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo initApiInfo() {
-		ApiInfo apiInfo = new ApiInfo("后端API 接口",// 大标题
-				"API 接口",// 简单的描述
-				"0.1",// 版本
-				"服务条款", "",// 作者
-				"",// 链接显示文字
-				""// 网站链接
+		ApiInfo apiInfo = new ApiInfo("",
+				"",
+				"",
+				"", "",
+				"",
+				""
 		);
 		return apiInfo;
 	}
