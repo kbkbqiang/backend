@@ -8,5 +8,244 @@
   <name>zaki backend</name>
   <modules>
     <module>backend-server</module>
+    <module>backend-dao</module>
+    <module>backend-utils</module>
   </modules>
+  
+  <!--dependencyManagement 动态jar包管理，父模块定义，子模块使用是添加引用即可 -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.rop</groupId>
+				<artifactId>rop</artifactId>
+				<version>${rop.version}</version>
+			</dependency>
+
+			<!-- spring容器相关jar -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>${spring.redis.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-oxm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis.spring.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-core-asl</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${servlet.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.openejb</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>5.0-1</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.faces</groupId>
+				<artifactId>jsf-api</artifactId>
+				<version>1.2_04</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+				<!--maven的tomcat插件本身不提供jstl包所以将依赖范围由provided改为 compile-->
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>2.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.faces</groupId>
+				<artifactId>jsf-impl</artifactId>
+				<version>1.2_04</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>jdom</groupId>
+				<artifactId>jdom</artifactId>
+				<version>1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jdom</groupId>
+				<artifactId>jdom</artifactId>
+				<version>2.0.2</version>
+			</dependency>			
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${redis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.amqp</groupId>
+				<artifactId>spring-amqp</artifactId>
+				<version>${spring.amqp.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.amqp</groupId>
+				<artifactId>spring-rabbit</artifactId>
+				<version>${spring.amqp.version}</version>
+			</dependency>	
+			
+			<dependency>
+				<groupId>com.thoughtworks.xstream</groupId>
+				<artifactId>xstream</artifactId>
+				<version>1.4.9</version>
+			</dependency>		
+			
+			<dependency>
+			  <groupId>com.yspay</groupId>
+			  <artifactId>yspaymerchantapi</artifactId>
+			  <version>1.0</version>
+			</dependency>
+			
+			<dependency>
+			  <groupId>com.yspay</groupId>
+			  <artifactId>jabacats</artifactId>
+			  <version>1.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!--父模块定义普通的jar依赖，子模块会自动继承依 -->
+	<!--<dependencies> <dependency> <groupId>org.springframework</groupId> <artifactId>spring-webmvc</artifactId> 
+		<version>${spring.version}</version> </dependency> <dependency> <groupId>org.springframework</groupId> 
+		<artifactId>spring-web</artifactId> <version>${spring.version}</version> 
+		</dependency> </dependencies> -->
+
+
+	<!-- jar版本统一管理，解决版本冲 -->
+	<properties>
+		<file.encoding>UTF-8</file.encoding>
+		<rop.version>1.1.5</rop.version>
+		<servlet.version>2.5</servlet.version>
+		<spring.version>4.2.6.RELEASE</spring.version>
+		<junit.version>4.11</junit.version>
+		<jackson.version>1.9.13</jackson.version>
+		<spring.redis.version>1.4.1.RELEASE</spring.redis.version>
+		<redis.version>2.5.2</redis.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<mybatis.version>3.2.7</mybatis.version>
+		<mybatis.spring.version>1.2.2</mybatis.spring.version>
+		<spring.amqp.version>1.4.0.RELEASE</spring.amqp.version>
+		<fastjson.version>1.2.12</fastjson.version>
+	</properties>
+	<build>
+		<!-- 指定maven 编译的JDK版本和编码格式 -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF8</encoding>
+                    <!-- 避免出：现程序包com.sun.image.codec.jpeg不存在等错误，这个类文件的位置在jre/lib/rt.jar中，因此使用meavn编译的时候将jdk下的支持包加入编译环境 --> 
+                    <!--  
+                    <compilerArguments>  
+              			<bootclasspath>${java.home}/lib/rt.jar;${java.home}/lib/jce.jar</bootclasspath>
+                    </compilerArguments>
+                     --> 
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

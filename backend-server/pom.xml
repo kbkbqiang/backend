@@ -34,6 +34,13 @@
 	  </parent>
 
 	<dependencies>
+		<!--*********项目依赖************ -->
+		<dependency>
+			<groupId>com.backend</groupId>
+			<artifactId>backend-dao</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
 		<!-- Mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -51,11 +58,10 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- 为了部署到tomcat -->
+		<!-- 添加aop依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
+			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 		<!-- 日志 -->
 		<dependency>
@@ -133,6 +139,13 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
+        
+        <!-- 为了部署到tomcat -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
         
         <!-- 增加JSP解析 -->
         <dependency>
