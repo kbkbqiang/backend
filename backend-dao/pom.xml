@@ -1,5 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
 	<parent>
 		<groupId>com.backend</groupId>
 		<artifactId>backend</artifactId>
@@ -8,13 +9,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>backend-dao</artifactId>
 	<packaging>jar</packaging>
-
+	
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.backend</groupId>
 			<artifactId>backend-utils</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		
 		<!-- Dao层jar依赖 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>

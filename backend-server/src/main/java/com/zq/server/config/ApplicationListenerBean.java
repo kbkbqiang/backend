@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationListener;
 
 /** 
  * @ClassName: ApplicationListenerBean 
- * @Description TODO
+ * @Description TODO 初始化
  * @author zhaoqiang 
  * @date: 2016年8月19日 上午11:44:33 
  */
