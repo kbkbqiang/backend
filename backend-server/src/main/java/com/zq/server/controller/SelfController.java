@@ -83,4 +83,10 @@ public class SelfController {
             return ToJsonUtil.exceptionToResult(e);
         }
     }
+    
+    @RequestMapping(value="/test", method = RequestMethod.POST)
+    @ApiOperation(value = "测试方法",httpMethod = "POST",response = ResultResp.class)
+    public void test(){
+    	
+    }
 }

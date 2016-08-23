@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.zq.server.config;
 
 import org.springframework.context.annotation.Bean;
@@ -13,11 +10,14 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- * @author zhaoqiang
- *
- */
 
+/**
+ * 
+ * @ClassName: SwaggerConfig 
+ * @Description TODO
+ * @author zhaoqiang 
+ * @date: 2016年8月23日 上午11:12:52
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -25,7 +25,7 @@ public class SwaggerConfig {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.any())
-				.apis(RequestHandlerSelectors.basePackage("con.zq"))
+				.apis(RequestHandlerSelectors.basePackage("com.zq.server.controller"))
 				.paths(PathSelectors.any()).build().apiInfo(initApiInfo());
 	}
 
