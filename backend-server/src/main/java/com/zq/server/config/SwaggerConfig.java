@@ -25,17 +25,18 @@ public class SwaggerConfig {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.any())
-				.apis(RequestHandlerSelectors.basePackage("cn.zq"))
+				.apis(RequestHandlerSelectors.basePackage("con.zq"))
 				.paths(PathSelectors.any()).build().apiInfo(initApiInfo());
 	}
 
 	private ApiInfo initApiInfo() {
-		ApiInfo apiInfo = new ApiInfo("",
-				"",
-				"",
-				"", "",
-				"",
-				""
+		ApiInfo apiInfo = new ApiInfo("接口",// 大标题
+				"接口", // 简单描述
+				"0.1", // 版本
+				"服务条款", 
+				"zq", // 作者
+				"链接文字", // 链接文字
+				"http://www.baidu.com" // 网站链接
 		);
 		return apiInfo;
 	}

@@ -27,10 +27,12 @@ import com.zq.server.filter.IpFilter;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.zq.server.controller",
+@ComponentScan(basePackages = { 
+		"com.zq.server.controller",
 		"com.zq.server.service",
 		"com.zq.server.filter",
-		"com.zq.server.config.etc" })
+		"com.zq.server.config.etc",
+		"com.backend.dao"})
 public class SpringWebConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired

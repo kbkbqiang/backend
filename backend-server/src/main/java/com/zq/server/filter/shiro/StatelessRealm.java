@@ -14,19 +14,19 @@ import org.apache.shiro.subject.PrincipalCollection;
 /**
  * 
  * 
- * @ClassName: StatelessRealm 
+ * @ClassName: StatelessRealm
  * @Description TODO
- * @author zhaoqiang 
+ * @author zhaoqiang
  * @date: 2016年8月22日 上午10:50:28
  */
 public class StatelessRealm extends AuthorizingRealm {
 
-//	private UserService service = null;
+	// private UserService service = null;
 
 	private Collection<String> permissions = null;
 
 	public StatelessRealm() {
-//		service = new UserService();
+		// service = new UserService();
 	}
 
 	@Override
@@ -36,8 +36,7 @@ public class StatelessRealm extends AuthorizingRealm {
 	}
 
 	@Override
-	protected AuthorizationInfo doGetAuthorizationInfo(
-			PrincipalCollection principals) {
+	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 		SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
 		if (permissions != null) {
 			for (String item : permissions)
@@ -51,14 +50,13 @@ public class StatelessRealm extends AuthorizingRealm {
 	}
 
 	@Override
-	protected AuthenticationInfo doGetAuthenticationInfo(
-			AuthenticationToken token) throws AuthenticationException {
+	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		StatelessToken stoken = null;
 		stoken = (StatelessToken) token;
 		String username = stoken.getUsername();
 
 		try {
-//			permissions = service.permissionByUser(username);
+			// permissions = service.permissionByUser(username);
 		} catch (Exception e) {
 		}
 

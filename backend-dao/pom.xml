@@ -1,6 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
 	<parent>
 		<groupId>com.backend</groupId>
 		<artifactId>backend</artifactId>
@@ -14,7 +13,7 @@
        spring boot 父节点依赖,
 	       引入这个之后相关的引入就不需要添加version配置，
 	       spring boot会自动选择最合适的版本进行添加。
-	       在这里使用的1.3.3版本，可能目前官方有最新的版本了，大家可以
+	       在这里使用的1.3.5版本，可能目前官方有最新的版本了，大家可以
 	       使用最新的版本。
      -->
 	<!-- <parent>
@@ -31,20 +30,8 @@
 	    <dependency>
 	       <groupId>org.springframework.boot</groupId>
 	       <artifactId>spring-boot-starter-web</artifactId>
-	       <exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
 	    </dependency>
 	
-		<dependency>
-			<groupId>com.backend</groupId>
-			<artifactId>backend-utils</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
 		<!-- Dao层jar依赖 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
