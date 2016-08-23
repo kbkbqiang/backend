@@ -3,11 +3,13 @@ package com.zq.server.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresGuest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.zq.backend.common.utils.ResultResp;
 import com.zq.backend.common.utils.ToJsonUtil;
 import com.zq.server.entity.params.UserPasswordParameter;
+import com.zq.server.service.TestService;
 
 /** 
  * @ClassName: SelfController 
@@ -27,9 +30,12 @@ import com.zq.server.entity.params.UserPasswordParameter;
 @RequestMapping(value="/account/self/", produces = "text/html;charset=UTF-8")
 @Api(value = "用户个人操作",description = "(SelfController)")
 public class SelfController {
+	
+	@Autowired
+	private TestService testService;
 
 	@RequiresGuest
-    @RequestMapping(value="/login", method = RequestMethod.POST)
+    @RequestMapping(value="login", method = RequestMethod.POST)
     @ApiOperation(value = "账户登录",httpMethod = "POST",response = ResultResp.class)
     public String login(@Valid @RequestBody UserPasswordParameter param) {
         try {
@@ -37,6 +43,7 @@ public class SelfController {
                     .put("email",param.getUsername())
                     .put("password",param.getPassword())
                     .toString();
+            testService.say();
 //            AccountPostResult<AccountLoginResult> result = AccountHttpSender.Instance().ObjectPost(
 //                    "/account/login_email_password",
 //                    content,

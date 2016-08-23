@@ -18,17 +18,17 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class DataSourceConfig {
 	
-	@Bean(name = "primaryDataSource")
-    @Qualifier("primaryDataSource")
+	@Bean(name = "read")
+    @Qualifier("read")
 	@Primary
-    @ConfigurationProperties(prefix="spring.datasource.primary")
+    @ConfigurationProperties(prefix="spring.datasource.read")
     public DataSource primaryDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "secondaryDataSource")
-    @Qualifier("secondaryDataSource")
-    @ConfigurationProperties(prefix="spring.datasource.secondary")
+    @Bean(name = "write")
+    @Qualifier("write")
+    @ConfigurationProperties(prefix="spring.datasource.write")
     public DataSource secondaryDataSource() {
         return DataSourceBuilder.create().build();
     }
