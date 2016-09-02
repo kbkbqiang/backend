@@ -3,7 +3,6 @@ package com.zq.server.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 
 import org.apache.shiro.authz.UnauthenticatedException;
@@ -44,6 +43,7 @@ public class SelfController {
                     .put("password",param.getPassword())
                     .toString();
             testService.say();
+            testService.testInsert();
 //            AccountPostResult<AccountLoginResult> result = AccountHttpSender.Instance().ObjectPost(
 //                    "/account/login_email_password",
 //                    content,
@@ -66,6 +66,7 @@ public class SelfController {
 //                    .toString();
         	return null;
         } catch (Exception e) {
+        	e.printStackTrace();
             return ToJsonUtil.exceptionToResult(e);
         }
     }

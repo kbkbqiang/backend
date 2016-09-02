@@ -1,22 +1,17 @@
 package com.zq.server.service;
 
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-import com.backend.dao.separate.DataSource;
+import org.springframework.transaction.annotation.Transactional;
 
 /** 
  * @ClassName: TestService 
  * @Description TODO
  * @author zhaoqiang 
- * @date: 2016年8月23日 下午2:08:58 
+ * @date: 2016年9月1日 下午3:08:04 
  */
-@Component
-public class TestService {
+public interface TestService {
 	
-	@DataSource("read")
-	public void say(){
-		System.out.println("===============");
-	}
+	public void say();
+	
+	public void testInsert();
 
 }

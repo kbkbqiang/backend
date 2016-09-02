@@ -8,9 +8,9 @@
 	  <property name="suppressAllComments" value="true" />  
 	</commentGenerator> 
     <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.18.16:3306/niiwoo" userId="niiwoowrite" password="tuandai123" />
-    <javaModelGenerator targetPackage="com.niiwoo.dao.model" targetProject="niiwoo-dao" />
-    <sqlMapGenerator targetPackage="com.niiwoo.dao.mapping" targetProject="niiwoo-dao" />
-    <javaClientGenerator targetPackage="com.niiwoo.dao.mapper" targetProject="niiwoo-dao" type="XMLMAPPER" />
+    <javaModelGenerator targetPackage="com.backend.dao.model" targetProject="backend-dao" />
+    <sqlMapGenerator targetPackage="com.backend.dao.mapping" targetProject="backend-dao" />
+    <javaClientGenerator targetPackage="com.backend.dao.mapper" targetProject="backend-dao" type="XMLMAPPER" />
     
     <!-- 数据库表已经产生对应的映射文件 -->
   
