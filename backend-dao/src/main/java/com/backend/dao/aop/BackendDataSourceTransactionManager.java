@@ -5,15 +5,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.support.DefaultTransactionStatus;
 
+import com.backend.dao.separate.DynamicDataSource;
+
 
 public class BackendDataSourceTransactionManager extends org.springframework.jdbc.datasource.DataSourceTransactionManager {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
 	private static Logger logger = LoggerFactory.getLogger(BackendDataSourceTransactionManager.class);
+	
+	private static final long serialVersionUID = 775864650703500204L;
+
+	public BackendDataSourceTransactionManager(DynamicDataSource dataSource){
+		super(dataSource);
+	}
+	
+	
 	
 	@Override
 	protected void doBegin(Object transaction, TransactionDefinition definition) {

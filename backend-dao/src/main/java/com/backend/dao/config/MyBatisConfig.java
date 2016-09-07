@@ -19,6 +19,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.backend.dao.aop.BackendDataSourceTransactionManager;
 import com.backend.dao.page.interceptor.PageInterceptor;
 import com.backend.dao.separate.DynamicDataSource;
 
@@ -147,7 +148,8 @@ public class MyBatisConfig extends DataSourceTransactionManagerAutoConfiguration
      */
     @Bean(name = "transactionManager")
     public DataSourceTransactionManager transactionManagers(DynamicDataSource dataSource) {
-        return new DataSourceTransactionManager(dataSource);
+        return new BackendDataSourceTransactionManager(dataSource);
+        //return new DataSourceTransactionManager(dataSource);
     }
 	
 }

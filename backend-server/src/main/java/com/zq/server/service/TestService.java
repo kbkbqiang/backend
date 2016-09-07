@@ -1,6 +1,5 @@
 package com.zq.server.service;
 
-import org.springframework.transaction.annotation.Transactional;
 
 /** 
  * @ClassName: TestService 
@@ -12,6 +11,10 @@ public interface TestService {
 	
 	public void say();
 	
-	public void testInsert();
+	public void testInsert() throws Exception;
+	
+	public void testUpdate() throws Exception;
+	
+	public void testTransaction() throws Exception;
 
 }

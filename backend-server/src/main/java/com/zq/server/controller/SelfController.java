@@ -42,8 +42,9 @@ public class SelfController {
                     .put("email",param.getUsername())
                     .put("password",param.getPassword())
                     .toString();
-            testService.say();
-            testService.testInsert();
+//            testService.say();
+//            testService.testInsert();
+            testService.testTransaction();
 //            AccountPostResult<AccountLoginResult> result = AccountHttpSender.Instance().ObjectPost(
 //                    "/account/login_email_password",
 //                    content,
