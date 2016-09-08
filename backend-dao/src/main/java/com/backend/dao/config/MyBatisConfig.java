@@ -127,22 +127,7 @@ public class MyBatisConfig extends DataSourceTransactionManagerAutoConfiguration
 	}
 	
 	/**
-	 * 配置事务管理器
-	 * @param dataSource
-	 * @return
-	 */
-	/*@Bean(name = "transactionManager")
-    public DataSourceTransactionManager transactionManager(DynamicDataSource dataSource) throws Exception {
-        return new DataSourceTransactionManager(dataSource);
-    }*/
-	
-	/*@Bean(name = "transactionManager")
-	public PlatformTransactionManager annotationDrivenTransactionManager(DynamicDataSource dataSource) {
-		return new DataSourceTransactionManager(dataSource);
-	}*/
-	
-	/**
-     * 自定义事务
+     * 配置事务管理器 自定义事务
      * MyBatis自动参与到spring事务管理中，无需额外配置，只要org.mybatis.spring.SqlSessionFactoryBean引用的数据源与DataSourceTransactionManager引用的数据源一致即可，否则事务管理会不起作用。
      * @return
      */

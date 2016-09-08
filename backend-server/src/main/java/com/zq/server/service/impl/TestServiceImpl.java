@@ -38,7 +38,7 @@ public class TestServiceImpl implements TestService {
 	
 	@Override
 	@DataSource("write")
-	@Transactional(rollbackFor = Exception.class,propagation = Propagation.REQUIRES_NEW)
+	@Transactional(rollbackFor = Exception.class)
 	public void testInsert() throws Exception{
 		InvestigationUrgeInfo testInfo = new InvestigationUrgeInfo();
 		testInfo.setInvestigationUserId("test");
@@ -57,18 +57,19 @@ public class TestServiceImpl implements TestService {
 	@Transactional(rollbackFor = Exception.class,propagation = Propagation.REQUIRES_NEW)
 	public void testUpdate() throws Exception {
 		InvestigationUrgeInfo urgeInfo = investigationUrgeInfoMapper.selectByPrimaryKey(46);
-		urgeInfo.setRemark("write444444");
+		urgeInfo.setRemark("write44444");
 		urgeInfo.setCreateTime(new Date());
 		investigationUrgeInfoMapper.updateByPrimaryKeySelective(urgeInfo);
+		//throw new Exception();
 	}
 
 	@Override
 	@DataSource("write")
-	@Transactional
+	@Transactional(rollbackFor = Exception.class)
 	public void testTransaction() throws Exception {
 		TestService service = (TestService) SpringContextUtil.getBean("testService");
 		service.testUpdate();
-		testUpdate();
+		//testUpdate();
 		say();
 		testInsert();
 	}
