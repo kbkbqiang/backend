@@ -4,7 +4,6 @@
 package com.zq.server.config;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -19,15 +18,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date: 2016年8月22日 下午3:57:59
  */
 //@EnableTransactionManagement
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 @EnableConfigurationProperties
-@SpringBootApplication
+@SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
 //@EnableAutoConfiguration(exclude={  
 //	    DataSourceAutoConfiguration.class,  
 //	        HibernateJpaAutoConfiguration.class, //（如果使用Hibernate时，需要加）  
 //	        DataSourceTransactionManagerAutoConfiguration.class,  
 //	        }) 
-public class Application extends SpringBootServletInitializer {
+public class Application extends SpringBootServletInitializer{
 
 	/**
 	 * @param args
@@ -49,4 +48,5 @@ public class Application extends SpringBootServletInitializer {
     String home() {
         return "redirect:test";
     }
+
 }

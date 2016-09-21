@@ -214,6 +214,18 @@
 				 <type>pom</type>
       			<scope>import</scope>
 			</dependency>
+			<!-- dubbo dependency -->  
+            <!-- <dependency>  
+                <groupId>com.alibaba</groupId>  
+                <artifactId>dubbo</artifactId>  
+                <version>${dubbo.version}</version>  
+                <exclusions>  
+                    <exclusion>  
+                        <artifactId>spring</artifactId>  
+                        <groupId>org.springframework</groupId>  
+                    </exclusion>  
+                </exclusions>  
+            </dependency> -->
 		</dependencies>
 	</dependencyManagement>
 
@@ -239,6 +251,7 @@
 		<mybatis.spring.version>1.2.2</mybatis.spring.version>
 		<spring.amqp.version>1.4.0.RELEASE</spring.amqp.version>
 		<fastjson.version>1.2.12</fastjson.version>
+		<dubbo.version>2.5.3</dubbo.version>
 	</properties>
 	<build>
 		<!-- 指定maven 编译的JDK版本和编码格式 -->

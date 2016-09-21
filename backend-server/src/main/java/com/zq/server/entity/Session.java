@@ -2,8 +2,6 @@ package com.zq.server.entity;
 
 
 /**
- * 
- * 
  * @ClassName: Session 
  * @Description TODO
  * @author zhaoqiang 
