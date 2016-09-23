@@ -39,14 +39,5 @@ public class Application extends SpringBootServletInitializer{
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(Application.class);
     }
-	
-	/**
-	 * 暂无test
-	 * @return
-	 */
-	@RequestMapping("/")
-    String home() {
-        return "redirect:test";
-    }
 
 }

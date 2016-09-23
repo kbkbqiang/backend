@@ -57,7 +57,7 @@ public class TestServiceImpl implements TestService {
 	@Transactional(rollbackFor = Exception.class,propagation = Propagation.REQUIRES_NEW)
 	public void testUpdate() throws Exception {
 		InvestigationUrgeInfo urgeInfo = investigationUrgeInfoMapper.selectByPrimaryKey(46);
-		urgeInfo.setRemark("write5555");
+		urgeInfo.setRemark("write6666");
 		urgeInfo.setCreateTime(new Date());
 		investigationUrgeInfoMapper.updateByPrimaryKeySelective(urgeInfo);
 		//throw new Exception();
