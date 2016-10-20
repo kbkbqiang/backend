@@ -40,22 +40,17 @@ public class CorsFilter implements Filter {
 		exposeHeaders = filterConfig.getInitParameter("exposeHeaders");
 	}
 
-	public void doFilter(ServletRequest req, ServletResponse res,
-			FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		if (StringUtils.isNotEmpty(allowOrigin)) {
-			List<String> allowOriginList = Arrays
-					.asList(allowOrigin.split(","));
+			List<String> allowOriginList = Arrays.asList(allowOrigin.split(","));
 			if (CollectionUtils.isNotEmpty(allowOriginList)) {
 				String currentOrigin = request.getHeader("Origin");
 				if (currentOrigin != null) {
 					for (String item : allowOriginList) {
-						if (currentOrigin.equals(item)
-								|| currentOrigin.startsWith(item + ":")
-								|| currentOrigin.startsWith(item + "/"))
-							response.setHeader("Access-Control-Allow-Origin",
-									currentOrigin);
+						if (currentOrigin.equals(item) || currentOrigin.startsWith(item + ":") || currentOrigin.startsWith(item + "/"))
+							response.setHeader("Access-Control-Allow-Origin", currentOrigin);
 					}
 				}
 			}
@@ -64,8 +59,7 @@ public class CorsFilter implements Filter {
 			response.setHeader("Access-Control-Allow-Methods", allowMethods);
 		}
 		if (StringUtils.isNotEmpty(allowCredentials)) {
-			response.setHeader("Access-Control-Allow-Credentials",
-					allowCredentials);
+			response.setHeader("Access-Control-Allow-Credentials", allowCredentials);
 		}
 		if (StringUtils.isNotEmpty(allowHeaders)) {
 			response.setHeader("Access-Control-Allow-Headers", allowHeaders);

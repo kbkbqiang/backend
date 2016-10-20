@@ -26,7 +26,7 @@ import com.zq.server.filter.IpFilter;
  * @date: 2016年8月22日 下午3:45:50
  */
 @Configuration
-@EnableWebMvc
+//@EnableWebMvc
 @ComponentScan(basePackages = { 
 		"com.zq.server.controller",
 		"com.zq.server.service",

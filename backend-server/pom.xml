@@ -26,14 +26,61 @@
 		<el.version>2.2.4</el.version>
 		<lombok.version>1.16.8</lombok.version>
 	</properties>
+	
+	<repositories>
+	    <repository>
+	        <id>spring-snapshots</id>
+	        <name>Spring Snapshots</name>
+	        <url>https://repo.spring.io/libs-snapshot</url>
+	        <snapshots>
+	            <enabled>true</enabled>
+	        </snapshots>
+	    </repository>
+	</repositories>
+	
+	<distributionManagement>
+	    <snapshotRepository>
+		 <id>sonatype-nexus-snapshots</id>
+		 <name>Sonatype Nexus Snapshots</name>
+		 <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.3.5.RELEASE</version>
+		<version>1.4.1.RELEASE</version>
+		<!-- <version>2.0.0.BUILD-SNAPSHOT</version> -->
 	</parent>
 
 	<dependencies>
+	
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+		<!-- <dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>de.codecentric</groupId>
+		    <artifactId>spring-boot-admin-server</artifactId>
+		    <version>1.4.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>de.codecentric</groupId>
+		    <artifactId>spring-boot-admin-server-ui</artifactId>
+		    <version>1.4.2</version>
+		</dependency> -->
+		
+		<dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>org.jolokia</groupId>
+			<artifactId>jolokia-core</artifactId>
+		</dependency>
 		<!--*********项目依赖************ -->
 		<dependency>
 			<groupId>com.backend</groupId>
@@ -50,18 +97,17 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.version}</version>
 		</dependency>
 		<!-- spring boot -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
+			<!-- <exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions> -->
 		</dependency>
 		<!-- 添加aop依赖 -->
 		<dependency>
@@ -79,10 +125,10 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j</artifactId>
-		</dependency>
+		</dependency> -->
 		<!-- shiro 包 -->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
@@ -125,7 +171,6 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>${httpclient.version}</version>
 		</dependency>
 
 		<dependency>
@@ -168,7 +213,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		
@@ -177,6 +221,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		
+		<!-- 启用热部署 -->
+		<dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>springloaded</artifactId>
+	    </dependency>
 	</dependencies>
 
 	<build>
@@ -205,6 +255,28 @@
 					<path>/backend-server</path>
 				</configuration>
 			</plugin>
+			
+			<!-- <plugin>  
+             <groupId>org.apache.maven.plugins</groupId>  
+             <artifactId>maven-assembly-plugin</artifactId>  
+             <configuration>  
+                 <appendAssemblyId>true</appendAssemblyId>  
+                 <descriptors> 描述文件路径  
+                     <descriptor>src/main/assemble/package.xml</descriptor>  
+                 </descriptors>  
+             </configuration>  
+             <executions>  
+                 <execution>  
+                     <id>make-zip</id>  
+                     绑定到package生命周期阶段上  
+                     <phase>package</phase>  
+                     <goals>  
+                         绑定到package生命周期阶段上  
+                         <goal>single</goal>  
+                     </goals>  
+                 </execution>  
+             </executions>  
+         	</plugin>  -->
 		</plugins>
 	</build>
 </project>

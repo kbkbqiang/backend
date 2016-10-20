@@ -39,6 +39,10 @@
     <!--<logger name="org.springframework" level="DEBUG"/>-->
     <!--<logger name="org.apache" level="DEBUG"/>-->
     <!--<logger name="org.mybatis.spring" level="DEBUG"/>-->
+    
+    <!-- 配置 -->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/> 
+	<jmxConfigurator/>
 
     <root level="INFO">
         <appender-ref ref="Console"/>

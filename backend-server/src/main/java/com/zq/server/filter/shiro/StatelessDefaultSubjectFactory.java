@@ -16,8 +16,8 @@ public class StatelessDefaultSubjectFactory extends DefaultWebSubjectFactory {
 
     @Override
     public Subject createSubject(SubjectContext context) {
-        //不创建session
-        context.setSessionCreationEnabled(false);
+        //不创建session jsp的时候需要启用
+        //context.setSessionCreationEnabled(false);
         return super.createSubject(context);
     }
 }
