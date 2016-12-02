@@ -3,18 +3,15 @@ package com.zq.server.service.impl;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import javax.management.RuntimeErrorException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.backend.dao.mapper.InvestigationUrgeInfoMapper;
+import com.backend.dao.mapper.OrderMapper;
 import com.backend.dao.model.InvestigationUrgeInfo;
 import com.backend.dao.separate.DataSource;
-import com.zq.server.service.SpringContextUtil;
 import com.zq.server.service.TestService;
 
 /**
@@ -28,12 +25,17 @@ public class TestServiceImpl implements TestService {
 
 	@Autowired
 	private InvestigationUrgeInfoMapper investigationUrgeInfoMapper;
+	
+	@Autowired
+	private OrderMapper orderMapper;
 
 	@Override
 	@DataSource("read")
 	public void say() {
 		InvestigationUrgeInfo urgeInfo = investigationUrgeInfoMapper.selectByPrimaryKey(46);
 		System.out.println("=======read say========" + urgeInfo.getRemark());
+		
+		orderMapper.selectAll();
 	}
 
 	@Override

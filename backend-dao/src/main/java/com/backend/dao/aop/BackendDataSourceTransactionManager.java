@@ -32,7 +32,11 @@ public class BackendDataSourceTransactionManager extends org.springframework.jdb
 
 	@Override
 	protected void doCommit(DefaultTransactionStatus status) { 
-		super.doCommit(status);
+		try{
+			super.doCommit(status);
+		}finally{
+			HandleObjs.endTransaction();
+		}
 		try {
 			HandleObjs.processTask();
 		} catch (Exception e) {
@@ -42,7 +46,11 @@ public class BackendDataSourceTransactionManager extends org.springframework.jdb
 	
 	@Override
 	protected void doRollback(DefaultTransactionStatus status){
-		super.doRollback(status);
+		try{
+			super.doRollback(status);
+		} finally{
+			HandleObjs.endTransaction();
+		}
 		try {
 			HandleObjs.removeAll();
 		} catch (Exception e) {

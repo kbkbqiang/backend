@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @date: 2016年9月2日 上午11:27:10
  */
 @Aspect
-@Order(-10)
+@Order(-1)
 // 保证该AOP在@Transactional之前执行
 @Component
 public class DataSourceAspect {
