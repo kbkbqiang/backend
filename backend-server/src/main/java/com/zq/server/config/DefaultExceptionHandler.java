@@ -2,6 +2,7 @@ package com.zq.server.config;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +18,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import com.zq.backend.common.utils.ToJsonUtil;
 
 /**
- * 控制器增强处理
+ * 控制器异常增强处理
  * 
- * @ClassName: DefaultExceptionHandler 
+ * @ClassName: DefaultExceptionHandler
  * @Description TODO
- * @author zhaoqiang 
+ * @author zhaoqiang
  * @date: 2016年9月5日 下午6:40:02
  */
 @ControllerAdvice
@@ -57,12 +58,10 @@ public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
 			List<ObjectError> allerr = exception.getAllErrors();
 
 			StringBuilder sb = new StringBuilder();
-			boolean firstflag = true;
 			for (ObjectError item : allerr) {
-				if (firstflag)
-					firstflag = false;
-				else
+				if (StringUtils.isNotBlank(sb.toString())) {
 					sb.append(",");
+				}
 				sb.append(item.getDefaultMessage());
 			}
 
@@ -73,17 +72,16 @@ public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
 			List<ObjectError> allerr = result.getAllErrors();
 
 			StringBuilder sb = new StringBuilder();
-			boolean firstflag = true;
 			for (ObjectError item : allerr) {
-				if (firstflag)
-					firstflag = false;
-				else
+				if (StringUtils.isNotBlank(sb.toString())) {
 					sb.append(",");
+				}
 				sb.append(item.getDefaultMessage());
 			}
 			return new ResponseEntity<Object>(ToJsonUtil.exceptionToResult(sb.toString()), new HttpHeaders(), HttpStatus.OK);
 		} else {
-			return new ResponseEntity<Object>(ToJsonUtil.exceptionToResult(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase()), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Object>(ToJsonUtil.exceptionToResult(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase()), new HttpHeaders(),
+					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }

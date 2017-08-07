@@ -13,7 +13,7 @@ import org.springframework.context.ApplicationListener;
  * @date: 2016年8月19日 上午11:44:33 
  */
 @Slf4j
-public class ApplicationListenerBean implements ApplicationListener {
+public class ApplicationListenerBean implements ApplicationListener<ApplicationEvent> {
 
 	@Override
     public void onApplicationEvent(ApplicationEvent event) {
