@@ -15,7 +15,7 @@ import org.apache.shiro.subject.PrincipalCollection;
  * 
  * 
  * @ClassName: StatelessRealm
- * @Description TODO
+ * @Description 身份认证realm; (这个需要自己写，账号密码校验；权限等)
  * @author zhaoqiang
  * @date: 2016年8月22日 上午10:50:28
  */

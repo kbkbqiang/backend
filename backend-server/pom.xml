@@ -18,7 +18,7 @@
 	<properties>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
-		<shiro.version>1.2.2</shiro.version>
+		<shiro.version>1.3.2</shiro.version>
 		<mysql.version>5.1.34</mysql.version>
 		<httpclient.version>4.5.2</httpclient.version>
 		<swagger.version>2.2.2</swagger.version>

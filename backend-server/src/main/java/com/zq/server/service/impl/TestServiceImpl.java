@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.backend.dao.mapper.InvestigationUrgeInfoMapper;
-import com.backend.dao.mapper.OrderMapper;
 import com.backend.dao.model.InvestigationUrgeInfo;
 import com.backend.dao.separate.DataSource;
 import com.zq.server.service.TestService;
@@ -25,9 +24,6 @@ public class TestServiceImpl implements TestService {
 
 	@Autowired
 	private InvestigationUrgeInfoMapper investigationUrgeInfoMapper;
-	
-	@Autowired
-	private OrderMapper orderMapper;
 
 	@Override
 	@DataSource("read")
@@ -35,7 +31,6 @@ public class TestServiceImpl implements TestService {
 		InvestigationUrgeInfo urgeInfo = investigationUrgeInfoMapper.selectByPrimaryKey(46);
 		System.out.println("=======read say========" + urgeInfo.getRemark());
 		
-		orderMapper.selectAll();
 	}
 
 	@Override

@@ -12,7 +12,8 @@ import org.apache.shiro.authc.AuthenticationToken;
  */
 public class StatelessToken implements AuthenticationToken {
 
-    private String username;
+	private static final long serialVersionUID = -5721827609115057782L;
+	private String username;
     private String clientDigest;
 
     public StatelessToken(String username, String clientDigest) {

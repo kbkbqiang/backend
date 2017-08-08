@@ -10,6 +10,7 @@
     <module>backend-server</module>
     <module>backend-dao</module>
     <module>backend-utils</module>
+    <module>backend-account</module>
   </modules>
   
   <!--dependencyManagement 动态jar包管理，父模块定义，子模块使用是添加引用即可 -->

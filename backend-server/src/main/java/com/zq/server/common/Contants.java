@@ -9,6 +9,6 @@ package com.zq.server.common;
  */
 public interface Contants {
 	
-	public static String TOKEN_HEADER_NAME = ""; // TokenHeaderName
+	public static String TOKEN_HEADER_NAME = "TokenHeaderName"; // TokenHeaderName
 
 }
