@@ -25,6 +25,7 @@
 		<junit.version>3.8.1</junit.version>
 		<el.version>2.2.4</el.version>
 		<lombok.version>1.16.10</lombok.version>
+		<akka.version>2.4.3</akka.version>
 	</properties>
 	
 	<repositories>
@@ -227,6 +228,12 @@
 	        <groupId>org.springframework</groupId>
 	        <artifactId>springloaded</artifactId>
 	    </dependency>
+	    <!-- akka -->
+	    <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.11</artifactId>
+            <version>${akka.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>
