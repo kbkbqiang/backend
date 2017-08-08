@@ -1,4 +1,4 @@
-package com.zq.server.config.akka;
+package com.zq.server.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
+import com.zq.server.config.akka.SpringExtension;
 
 import akka.actor.ActorSystem;
 
