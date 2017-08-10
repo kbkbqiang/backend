@@ -19,6 +19,6 @@ PrintServer.db
 
 # eclipse
 *project
-#*settings
+*settings
 *classpath
 *externalToolBuilders
