@@ -7,6 +7,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>backend-utils</artifactId>
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
@@ -163,9 +164,9 @@
 	</dependencies>
 
 	<properties>
+		<java.version>1.8</java.version>
 		<file.encoding>UTF-8</file.encoding>
 		<commons-lang.version>2.6</commons-lang.version>
-		<java.version>1.7</java.version>
 		<logback.version>1.1.2</logback.version>
 		<slf4j.version>1.7.6</slf4j.version>
 		<logback.ext.version>0.1.1</logback.ext.version>
